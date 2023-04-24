@@ -6,7 +6,10 @@ namespace Module._17.Patterns.Practice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var myAccount = new Account { Balance = 1000, Type = "Зарплатный" };
+            Calculator.CalculateInterest(myAccount);
+
+            Console.WriteLine("Процентная ставка составляет: " + myAccount.Interest);
         }
     }
 }
