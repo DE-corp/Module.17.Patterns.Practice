@@ -1,26 +1,13 @@
-﻿namespace Module._17.Patterns.Practice
+﻿using Module._17.Patterns.Practice.Accounts;
+
+namespace Module._17.Patterns.Practice
 {
-    public static class Calculator
+    public class Calculator
     {
-        // Метод для расчета процентной ставки
-        public static void CalculateInterest(Account account)
+        public void CalculateInterest(ICalculateInterest account)
         {
-            if (account.Type == "Обычный")
-            {
-                // расчет процентной ставки обычного аккаунта по правилам банка
-                account.Interest = account.Balance * 0.4;
+            account.CalculateInterest();
 
-                if (account.Balance < 1000)
-                    account.Interest -= account.Balance * 0.2;
-
-                if (account.Balance < 50000)
-                    account.Interest -= account.Balance * 0.4;
-            }
-            else if (account.Type == "Зарплатный")
-            {
-                // расчет процентной ставк зарплатного аккаунта по правилам банка
-                account.Interest = account.Balance * 0.5;
-            }
         }
     }
 }

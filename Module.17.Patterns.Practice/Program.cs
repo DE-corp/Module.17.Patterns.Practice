@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Module._17.Patterns.Practice.Accounts;
 
 namespace Module._17.Patterns.Practice
 {
@@ -6,10 +6,11 @@ namespace Module._17.Patterns.Practice
     {
         static void Main(string[] args)
         {
-            var myAccount = new Account { Balance = 1000, Type = "Зарплатный" };
-            Calculator.CalculateInterest(myAccount);
+            Calculator calculator = new Calculator();
 
-            Console.WriteLine("Процентная ставка составляет: " + myAccount.Interest);
+            calculator.CalculateInterest(new SalaryAccount(balance: 1000));
+            calculator.CalculateInterest(new RegularAccount(balance: 504500));
+
         }
     }
 }
